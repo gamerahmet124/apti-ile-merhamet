@@ -70,10 +70,10 @@ function showQuestion(index){
     resultImg.style.display="none";
     nextBtn.style.display="none";
     retryBtn.style.display="none";
-
     option1.style.display="block";
     option2.style.display="block";
-
+    // Soruların arka plan
+    screenImg.src="ilk.png";
     // Doğru2.png ise soru sağa
     if(q.options.some(o=>o.correct && o.resultImg==="doğru2.png")){
         questionContainer.classList.add("right");
@@ -87,7 +87,6 @@ function handleAnswer(option){
     const selected=q.options[option];
     resultImg.src=selected.resultImg;
     resultImg.style.display="block";
-
     if(selected.correct){
         nextBtn.style.display="block";
         option1.style.display="none";
@@ -134,7 +133,7 @@ startBtn.addEventListener("click", ()=>{
     startBtn.style.display="none";
     screenImg.style.display="none";
     endScreen.style.display="none";
-    bgMusic.pause();
+    bgMusic.pause(); // sadece başlangıçta çaldı, şimdi duruyor
     showQuestion(current);
 });
 </script>
